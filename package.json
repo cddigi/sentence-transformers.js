@@ -1,6 +1,6 @@
 {
-  "name": "@cddigi/sentence-transformers",
-  "version": "0.0.3",
+  "name": "@tuesdaycrowd/sentence-transformers",
+  "version": "1.0.0",
   "description": "Run sentence-transformers compatible models in Node.js or browser.",
   "type": "module",
   "main": "dist/index.js",
@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Cornelius Donley <cornelius@donley.cx>",
+  "author": "Cornelius Donley <admin@tuesdaycrowd.com>",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "18",
