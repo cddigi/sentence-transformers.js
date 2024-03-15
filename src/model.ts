@@ -3,40 +3,29 @@ import {
   AutoTokenizer,
   PretrainedOptions,
 } from "@xenova/transformers";
-//@ts-ignore
-import { getModelJSON } from "@xenova/transformers/src/utils/hub.js";
 
 export class SentenceTransformer {
   constructor(
     private readonly tokenizer: AutoTokenizer,
-    private readonly model: AutoModel
+    private readonly model: AutoModel,
   ) {}
 
   static async from_pretrained(
     modelName: string,
-    options?: PretrainedOptions
+    options?: PretrainedOptions,
   ): Promise<SentenceTransformer> {
     if (!options) {
       options = {
-        quantized: true,
-        // @ts-ignore
-        progress_callback: null,
+        quantized: false,
+        progress_callback: undefined,
         config: null,
-        // @ts-ignore
-        cache_dir: null,
+        cache_dir: undefined,
         local_files_only: false,
         revision: "main",
       };
     }
     const tokenizer = await AutoTokenizer.from_pretrained(modelName, options);
     const model = await AutoModel.from_pretrained(modelName, options);
-    const modules = await getModelJSON(
-      modelName,
-      "modules.json",
-      true,
-      options
-    );
-    console.log(modules);
 
     return new SentenceTransformer(tokenizer, model);
   }
@@ -51,9 +40,6 @@ export class SentenceTransformer {
     //@ts-ignore
     const outputs = await this.model(modelInputs);
 
-    console.log(modelInputs);
-    console.log(Object.keys(outputs));
-
-    return [];
+    return outputs;
   }
 }

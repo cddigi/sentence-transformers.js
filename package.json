@@ -1,6 +1,6 @@
 {
-  "name": "@botisan-ai/sentence-transformers",
-  "version": "1.0.0",
+  "name": "@cddigi/sentence-transformers",
+  "version": "0.0.3",
   "description": "Run sentence-transformers compatible models in Node.js or browser.",
   "type": "module",
   "main": "dist/index.js",
@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Cornelius Donley <cornelius@donley.cx>",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "18",
@@ -19,5 +19,13 @@
   "dependencies": {
     "@xenova/transformers": "^2.5.4",
     "onnxruntime-node": "^1.15.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/cddigi/sentence-transformers.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cddigi/sentence-transformers.js/issues"
+  },
+  "homepage": "https://github.com/cddigi/sentence-transformers.js#readme"
 }
