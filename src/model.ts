@@ -16,7 +16,7 @@ export class SentenceTransformer {
   ): Promise<SentenceTransformer> {
     if (!options) {
       options = {
-        quantized: false,
+        quantized: true,
         progress_callback: undefined,
         config: null,
         cache_dir: undefined,
