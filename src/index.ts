@@ -3,9 +3,6 @@ import { SentenceTransformer } from "./model.js";
 async function main() {
   const sentenceTransformer = await SentenceTransformer.from_pretrained(
     "mixedbread-ai/mxbai-embed-large-v1",
-    {
-      quantized: true,
-    },
   );
   const outputs = await sentenceTransformer.encode([
     "Hello world",
